@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "author": "Maria Eduarda Nepomuceno Alves",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-breadboard-half",
+      "id": "bb1",
+      "top": -137.4,
+      "left": 242.8,
+      "attrs": { "color": "#eeefed" }
+    },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 10.2, "left": -96.6, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 160,
+      "left": 264.8,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -128.4,
+      "left": 282.2,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -128.4,
+      "left": 368.6,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -128.4,
+      "left": 445.4,
+      "attrs": { "color": "limegreen" }
+    }
+  ],
+  "connections": [
+    [ "bb1:13t.b", "bb1:bn.12", "black", [ "v0" ] ],
+    [ "bb1:4t.b", "bb1:bn.4", "black", [ "v0" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h0" ] ],
+    [ "lcd1:GND", "bb1:bn.1", "black", [ "h9.6", "v-134.4" ] ],
+    [ "lcd1:SDA", "uno:A4", "green", [ "h0" ] ],
+    [ "lcd1:SCL", "uno:A5", "green", [ "h0" ] ],
+    [ "bb1:5t.b", "uno:7", "green", [ "v0" ] ],
+    [ "bb1:14t.b", "uno:6", "green", [ "v0" ] ],
+    [ "led1:A", "bb1:5t.a", "", [ "$bb" ] ],
+    [ "led1:C", "bb1:4t.a", "", [ "$bb" ] ],
+    [ "led2:A", "bb1:14t.a", "", [ "$bb" ] ],
+    [ "led2:C", "bb1:13t.a", "", [ "$bb" ] ],
+    [ "led3:A", "bb1:22t.a", "", [ "$bb" ] ],
+    [ "led3:C", "bb1:21t.a", "", [ "$bb" ] ],
+    [ "bb1:21t.d", "bb1:21t.e", "green", [ "v0" ] ],
+    [ "bb1:21t.b", "bb1:bn.18", "green", [ "v0" ] ],
+    [ "bb1:22t.b", "uno:5", "green", [ "v0" ] ],
+    [ "bb1:7t.a", "uno:GND.1", "green", [ "v0" ] ],
+    [ "bb1:bn.5", "uno:GND.3", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

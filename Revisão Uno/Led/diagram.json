@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "author": "Nabila Calista",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -108.6, "left": 338.8, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -0.6, "attrs": {} },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": 112, "left": 428, "attrs": { "pins": "i2c" } },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -99.6,
+      "left": 349.4,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -99.6,
+      "left": 407,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -99.6,
+      "left": 464.6,
+      "attrs": { "color": "green" }
+    }
+  ],
+  "connections": [
+    [ "bb1:1t.b", "bb1:bn.1", "black", [ "v134.4", "h0", "v-19.2" ] ],
+    [ "bb1:2t.b", "uno:7", "red", [ "v48", "h-182.4", "v-9.6" ] ],
+    [ "bb1:7t.b", "bb1:bn.6", "black", [ "v0" ] ],
+    [ "bb1:8t.b", "uno:6", "yellow", [ "v38.4", "h-230.4" ] ],
+    [ "bb1:13t.b", "bb1:bn.11", "black", [ "v0" ] ],
+    [ "led1:A", "bb1:2t.a", "", [ "$bb" ] ],
+    [ "led1:C", "bb1:1t.a", "", [ "$bb" ] ],
+    [ "led2:A", "bb1:8t.a", "", [ "$bb" ] ],
+    [ "led2:C", "bb1:7t.a", "", [ "$bb" ] ],
+    [ "led3:A", "bb1:14t.a", "", [ "$bb" ] ],
+    [ "led3:C", "bb1:13t.a", "", [ "$bb" ] ],
+    [ "led3:A", "uno:5", "green", [ "v28.8", "h-278.4" ] ],
+    [ "bb1:bn.3", "lcd1:GND", "orange", [ "v46.7", "h1.6" ] ],
+    [ "bb1:bn.2", "uno:GND.3", "gold", [ "v123.5", "h-200" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h-38.4", "v76.9", "h-230.4" ] ],
+    [ "lcd1:SDA", "uno:A4", "green", [ "h-28.8", "v86.6", "h-153.6" ] ],
+    [ "lcd1:SCL", "uno:A5", "blue", [ "h-19.2", "v86.7", "h-153.6" ] ]
+  ],
+  "dependencies": {}
+}
