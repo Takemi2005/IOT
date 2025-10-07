@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "author": "Luiza takemi",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-mini", "id": "bb1", "top": -49.4, "left": 324, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -153.3, "left": 349.8, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 4.8,
+      "left": 306.65,
+      "rotate": 90,
+      "attrs": { "value": "220000" }
+    }
+  ],
+  "connections": [
+    [ "dht1:VCC", "bb1:4t.a", "", [ "$bb" ] ],
+    [ "dht1:SDA", "bb1:5t.a", "", [ "$bb" ] ],
+    [ "dht1:NC", "bb1:6t.a", "", [ "$bb" ] ],
+    [ "dht1:GND", "bb1:7t.a", "", [ "$bb" ] ],
+    [ "r1:1", "bb1:4t.b", "green", [ "h0" ] ],
+    [ "r1:1", "bb1:1t.c", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:1b.g", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:5t.d", "green", [ "h0" ] ],
+    [ "uno:GND.2", "bb1:7t.e", "limegreen", [ "v58.1", "h214.5" ] ],
+    [ "uno:5V", "bb1:4t.e", "red", [ "v29.3", "h195.2" ] ],
+    [ "uno:3", "bb1:5t.d", "cyan", [ "v-85.8", "h51.4" ] ]
+  ],
+  "dependencies": {}
+}
