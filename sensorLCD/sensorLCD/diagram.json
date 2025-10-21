@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "author": "Maria Eduarda Nepomuceno Alves",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-mini", "id": "bb1", "top": -145.4, "left": -204, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -201, "left": 66.6, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 131.2,
+      "left": 44,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -153.3, "left": -187.8, "attrs": {} }
+  ],
+  "connections": [
+    [ "dht1:VCC", "bb1:3b.i", "", [ "$bb" ] ],
+    [ "dht1:SDA", "bb1:4b.i", "", [ "$bb" ] ],
+    [ "dht1:NC", "bb1:5b.i", "", [ "$bb" ] ],
+    [ "dht1:GND", "bb1:6b.i", "", [ "$bb" ] ],
+    [ "bb1:6b.j", "uno:GND.2", "black", [ "v0" ] ],
+    [ "bb1:3b.j", "uno:5V", "white", [ "v48", "h399.4" ] ],
+    [ "bb1:4b.j", "uno:3", "blue", [ "v0" ] ],
+    [ "bb1:5b.j", "uno:11", "limegreen", [ "v-192", "h364.2" ] ],
+    [ "uno:5V", "lcd1:VCC", "red", [ "v76.7", "h-178.6" ] ],
+    [ "uno:GND.2", "lcd1:GND", "black", [ "v0" ] ],
+    [ "uno:A5", "lcd1:SCL", "green", [ "v0" ] ],
+    [ "uno:A4", "lcd1:SDA", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
